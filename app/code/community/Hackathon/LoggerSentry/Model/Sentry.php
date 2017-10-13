@@ -115,7 +115,7 @@ class Hackathon_LoggerSentry_Model_Sentry extends Zend_Log_Writer_Abstract
      */
     protected function _isSessionDataAvailable($eventFile)
     {
-        return (strpos($eventFile, 'Cm/RedisSession') === false);
+        return (strpos($eventFile, 'Cm/RedisSession') === false && PHP_SAPI !== 'cli');
     }
 
     /**
